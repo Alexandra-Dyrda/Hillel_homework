@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register</title>
+	<link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Marmelad&display=swap" rel="stylesheet">
+	<style>
+		body {
+			background-image: url("https://www.firestock.ru/download/s/ubvgf2fmlyzta47/photodune-5264132.jpg");
+			background-size: cover;
+		}
+
+		input {
+			width: 185px;
+			font-size: 20px;
+			margin: 10px;
+			font-family: 'Alice', serif;
+			border-radius: 40px;
+		}
+
+		.container {
+			max-width: 420px;
+			text-align: center;
+			padding: 20px;
+			background: radial-gradient( rgba(115, 241, 250, 0.25), rgba(229, 253, 255, 0.2));
+			box-shadow: 1px 1px 20px 9px rgba(229, 253, 255, 0.2);
+		}
+
+		h1 {
+			text-align: center;
+			font-family: 'Marmelad', sans-serif;
+			font-size: 42px;
+			color: #E0FFFF;
+			text-shadow: 3px 3px 2px black;
+		}
+		
+		button {
+			font-size: 18px;
+			margin: 20px;
+			font-family: 'Alice', serif;
+		}
+
+		label {
+			font-size: 23px;
+			font-family: 'Pangolin', cursive;
+		}
+
+		.casing {
+			max-width: 1500px;
+			height: 610px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.firstinput {
+			border: 2px solid #1c776e;
+			border-radius: 30%;
+			margin: 5px;
+			box-shadow: 1px 0px 13px 6px #aaf4ed;
+		}
+	</style>
+</head>
+<body>
+	<div class="casing">
+		<form action="">
+			<div class="container">
+				<h1>Регистрация</h1>
+				<div class="firstinput">
+					<label for="name">Имя</label>
+				    <input type="text" name="name" id="name" placeholder="Ваше имя" required>
+			    </div>
+			    <div class="firstinput">
+			    	<label for="surname">Фамилия</label>
+			    	<input type="text" name="surname" id="surname" placeholder="Ваша фамилия" min="0">
+			    </div>
+			    <div class="firstinput">
+			    	<label for="age">Возраст</label>
+			    	<input type="number" name="age" id="age" placeholder="Ваш возраст" min="0" required>
+			    </div>
+			    <div class="firstinput">
+			    	<label for="password">Почта</label>
+			    	<input type="email" name="password" id="password" placeholder="Ваша почта" required>
+			    </div>
+			    <div class="firstinput">
+			    	<label for="phone">Номер телефона</label>
+			    	<input type="tel" name="phone" id="phone" placeholder="+(380)976458923" pattern="[0-9]{10}">
+			    </div>
+			    <button>Отправить</button>
+			</div>    
+	    </form>
+    </div>
+</body>
+</html>
