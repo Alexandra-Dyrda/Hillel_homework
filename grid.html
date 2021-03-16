@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Comic</title>
+	<style>
+		.grid-container {
+			display: grid;
+			grid-template-columns: 165px 250px 250px 250px 250px;
+			grid-template-rows: 200px 20px 320px;
+			grid-gap: 25px;
+		}
+
+		body {
+			background-color: rgb(247, 252, 192);
+		}
+
+		.first-image {
+			width: 250px;
+			border: 3px solid black;
+			box-shadow: 1px 1px 15px 10px rgb(240, 208, 48);
+		}
+
+		.second-image {
+			width: 210px;
+			border: 3px solid black;
+			border-radius: 15%;
+			box-shadow: 1px 1px 15px 10px orange;
+		}
+
+		.third-image {
+			width: 250px;
+			border: 3px solid black;
+			box-shadow: 1px 1px 15px 10px rgb(240, 208, 48);
+		}
+
+		.fourth-image {
+			width: 220px;
+			border: 4px solid black;
+			box-shadow: 1px 1px 15px 10px orange;
+			border-radius: 15%;
+		}
+
+		.fifth-image {
+			width: 220px;
+			border: 3px solid black;
+			box-shadow: 1px 1px 15px 10px orange;
+			border-radius: 15%;
+		}
+
+		.sixth-image {
+			width: 330px;
+			border: 3px solid black;
+			box-shadow: 1px 1px 19px 9px red;
+			border-radius: 5%;
+		}
+
+		img {
+			width: 200px;
+		}
+
+		.background {
+			background-image: url("https://image.freepik.com/free-vector/abstract-colorful-comic-book-background_1035-13347.jpg");
+			background-size: cover;
+			margin: 30px;
+			margin-left: 60px;
+			width: 1200px;
+			box-shadow: 1px 1px 36px 18px red;
+		}
+
+		.grid-item-1 {
+			grid-column-start: 2;
+			margin-top: 20px;
+		}
+
+
+		.grid-item-2 {
+			grid-column-start: 3;
+			margin-top: 40px;
+			margin-left: 10px;
+		}
+
+		.grid-item-3 {
+			grid-column-start: 4;
+			margin-top: 20px;
+			margin-left: -10px;
+		}
+
+		.grid-item-4 {
+			grid-row-start: 3;
+			grid-column-start: 2;
+			margin-left: -20px;
+		}
+
+		.grid-item-5 {
+			grid-row-start: 3;
+			grid-column-start: 4;
+			margin-left: 50px;
+		}
+
+		.grid-item-6 {
+			grid-row-start: 3;
+			grid-column-start: 3;
+			margin-top: 30px;
+			margin-left: -40px;
+		}
+
+		.boom-container {
+			grid-row-start: 2;
+			grid-column-start: 3;
+			margin-top: -60px;
+			margin-left: 15px;
+			transform: rotate(-8deg);
+		}
+
+		.boom {
+			width: 200px;
+		}
+
+		.spark {
+			width: 170px;
+			margin-top: 30px;
+		}
+
+		.second-spark-container {
+			grid-column-start: 3;
+			grid-row-start: 2;
+			margin-top: -90px;
+			margin-left: 45px;
+		}
+
+		.second-spark {
+			width: 300px;
+		}
+
+		.third-spark-container {
+			grid-column-start: 3;
+			grid-row-start: 2;
+			margin-top: 150px;
+			transform: rotate(180deg);
+		}
+
+		.third-spark {
+			width: 300px;
+			margin-left: 65px;
+		}
+
+		.wow-container {
+			grid-row-start: 3;
+			margin-top: 140px;
+			margin-left: 10px;
+		}
+
+		.second-wow-container {
+			grid-row-start: 3;
+			grid-column-start: 5;
+			margin-top: 90px;
+			margin-left: 5px;
+		}
+		.second-wow {
+			width: 180px;
+		}
+
+		.laughter-container {
+			margin-top: -220px;
+		}
+	</style>
+</head>
+<body>
+	<div class="background">
+		<div class="grid-container">
+			<div class="grid-item grid-item-1">
+				<img  class="first-image" src="comic (1).jpg">
+			</div>
+			<div class="grid-item grid-item-2">
+				<img class="second-image" src="comic (2).jpg">
+			</div>
+			<div class="grid-item grid-item-3">
+				<img class="third-image" src="comic (3).jpg">
+			</div>
+			<div class="grid-item grid-item-4">
+				<img class="fourth-image" src="comic (4).jpg">
+			</div>
+			<div class="grid-item grid-item-5">
+				<img class="fifth-image" src="comic (5).jpg">
+			</div>
+			<div class="grid-item grid-item-6">
+				<img class="sixth-image" src="comic (6).jpg">
+			</div>
+			<div class="second-spark-container">
+				<img class="second-spark" src="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-d11028e896314ae8885480d67a68fdaa.png" alt="spark">
+			</div>
+			<div class="third-spark-container">
+				<img class="third-spark" src="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-d11028e896314ae8885480d67a68fdaa.png" alt="spark">
+			</div>
+			<div class="boom-container">
+				<img class="boom" src="https://avatanplus.com/files/resources/original/5aac1131c1d8816230232a82.png" alt="boom">
+			</div>
+			<div class="spark-container">
+				<img class="spark" src="https://avatanplus.com/files/resources/original/5a06e929981aa15faafeca97.png">
+			</div>
+			<div class="wow-container">
+				<img class="wow" src="https://avatanplus.com/files/resources/original/57adcb25d3b531567ee18beb.png" alt="wow">
+			</div>
+			<div class="second-wow-container">
+				<img class="second-wow" src="https://wow-bau.com/wp-content/uploads/2020/07/wowbau_logo2.png" alt="wow">
+			</div>
+			<div class="laughter-container">
+				<img clas="laughter" src="https://assets.stickpng.com/thumbs/586294223796e30ac446872f.png">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
