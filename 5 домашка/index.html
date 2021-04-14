@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+	<title>Document</title>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+			font-size: 1.2em;
+		}
+
+		input {
+			background-color: lightgrey;
+			border-radius: 7px;
+			width: 70%;
+			min-width: 150px;
+			padding: 4px;
+		}
+
+		button {
+			width: 80%;
+			min-width: 150px;
+			font-size: 18px;
+			background-color: red;
+			color: white;
+			border-radius: 7px;
+			margin-top: 35px;
+			padding: 4px;
+		}
+
+		.grid-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, 317px);
+			background-color: white;
+			margin: 0 20px 0 20px;
+			padding: 50px 10px 50px 10px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.container {
+			background-color: lightgrey;
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="grid-container">
+			<div class="grid-item">
+				<label for="name">First name</label>
+				<input type="text" name="name" id="name" placeholder="Jake">
+			</div>
+			<div class="grid-item">
+				<label for="surname">Last name</label>
+				<input type="text" name="surname" id="surname" placeholder="The dog">
+			</div>
+			<div class="grid-item">
+				<label for="email">Email</label>
+				<input type="email" name="login" id="email" placeholder="jake@adventure.com">
+			</div>
+			<div class="grid-item">
+				<button>Subscribe</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
