@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const students = [
+			{ name: "Вася", age: 25, averageMark: 70 },
+			{ name: "Петя", age: 30, averageMark: 100 },
+			{ name: "Маша", age: 28, averageMark: 50 },
+		]
+
+		console.log(students, "изначальный массив");
+
+		const usersNames = students.map(function(item) {
+			return item.name
+		});
+
+		console.log("1)", usersNames, "имена учеников");
+
+
+		let copyArray = usersNames.slice();
+
+		let lisa = copyArray.push("Лиза");
+		console.log("2)", copyArray, "Добавили в массив ещё одного ученика");
+
+
+		const elderPeople = students.filter(function(item) {
+			return item.age > 18
+		})
+		const over18 = elderPeople.map(function(item) {
+			return item.name
+		});
+		console.log("3)", over18, "лица, старше 18");
+
+
+		const marks = students.filter(function(item) {
+			return item.averageMark > 50
+		})
+		const goodMarks = marks.map(function(item) {
+			return item.name
+		});
+		console.log("4)", goodMarks, "ученики, имеющие оценку выше 50");
+
+
+		let secondCopyArray = usersNames.slice();
+		secondCopyArray[0] = "Артем";
+		console.log("5)", secondCopyArray, "Скопированный массив, в котором вместо первого ученика теперь находится другой");
+		
+
+		const findStudent = students.find(function(item) {
+			return item.name === "Петя"
+		})
+		console.log("6)", findStudent, "ученик, у которого имя <Петя> ");
+	</script>
+</body>
+</html>
