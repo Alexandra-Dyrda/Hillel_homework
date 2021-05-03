@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+	<title>Document</title>
+	<style>
+		.form-container {
+			margin: 5px 0;
+		}
+		body, input, button {
+			font-size: 1em;
+		}
+		html {
+			margin: 20px;
+		}
+		body {
+			background-image: linear-gradient(to left, rgba(59, 182, 219, 0.6), rgba(242, 80, 196, 0.4)), url(
+			 "https://avatars.mds.yandex.net/get-zen_doc/1909059/pub_5ce2789700ad2100b393ace3_5ce294f00d473000b08b0b00/scale_1200");
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		h2 {
+			padding-top: 7px;
+			color: rgb(148, 148, 148);
+			font-family: 'Inter', sans-serif;
+			font-size: 30px;
+		}
+		input {
+			width: 100%;
+			margin: 2px 0;
+			padding: 5px;
+			border: none;
+			border-color: grey;
+			font-family: 'Inter', sans-serif;
+		}
+		input:hover {
+			border: 2px solid grey;
+			border-radius: 2px;
+		}
+		.container {
+			max-width: 380px;
+			min-width: 300px;
+			text-align: center;
+			background-color: rgba(255, 255, 255, 0.85);
+			border-radius: 5px;
+		}
+		img {
+			display: flex;
+			justify-content: center;
+			width: 50%;
+		}
+		button {
+			border-radius: 30px;
+			padding: 6px 25px;
+			background-color: rgb(75, 192, 242);
+			box-shadow: 1px 1px 20px 3px rgba(75, 192, 242, 0.8);
+			margin: 15px 0;
+			color: rgb(250, 252, 252);
+		}
+		button:hover {
+			background-color: rgb(61, 167, 212);
+			transition: 0.3s;
+			box-shadow: 1px 1px 20px 3px rgba(61, 167, 212, 0.8);
+		}
+		.family {
+			width: 35%;
+			height: 35%;
+			/*display: inline-block;*/
+			border-radius: 13px;
+			border: 5.5px double rgb(61, 184, 212);
+			/*margin-top: -120px;*/
+		}
+		.main-container {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		div {
+			display: inline-block;
+		}
+		span {
+			font-family: 'Inter', sans-serif;
+			font-size: 1.2em;
+			max-width: 1200px;
+			color: white;
+			text-shadow: 1px 1px 1px black;
+			display: block;
+			word-wrap: break-word;
+		}
+		ol {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			max-width: 1200px;
+		}
+		li {
+			border: 4px double rgb(217, 217, 217);
+			margin: 5px 5px 15px 33px;
+			padding: 3px;
+			font-family: 'Inter', sans-serif;
+			font-size: 22px;
+			word-wrap: break-word;
+		}
+		.work {
+			margin-top: 280px;
+			width: 20%;
+			height: 20%;
+			border-radius: 10px;
+			border: 5px double brown;
+		}
+		.neon {
+			width: 20%;
+			position: absolute;
+			left: 520px;
+		}
+		@media screen and (max-width: 1024px) {
+    		.family {
+    			width: 40%;
+				height: 40%;
+				margin: 7px 0;
+    		}
+    		.work {
+    			width: 40%;
+				height: 40%;
+				margin: 7px 0;
+    		}
+    		.main-container .container{
+    			width: 700px;
+    		}
+    		li {
+    			max-width: 600px;
+    		}
+    		.neon {
+    			width: 40%;
+    			top: 300px;
+    		}
+   		}
+   		@media screen and (max-width: 768px) {
+    		.family {
+    			width: 100%;
+				height: 100%;
+				margin: 7px 0;
+    		}
+    		.work {
+    			width: 100%;
+				height: 100%;
+				margin: 7px 0;
+    		}
+    		.main-container {
+    			text-align: center;
+    		}  
+    		.neon {
+    			display: none;
+    		} 
+    	}
+	</style>
+</head>
+<body>
+	<div class="main-container">
+		<div class="container">
+			<h2>Регистрация</h2>
+			<form name="contacts">
+				<div class="form-container">
+					<input name="name" id="name" type="text" placeholder="Введите имя" required>
+				</div>
+				<div class="form-container">
+					<input name="surname" id="surname" type="text" placeholder="Введите Вашу фамилию" required>
+				</div>
+				<div class="form-container">
+					<input name="patronymic" id="patronymic" type="text" placeholder="Введите Ваше отчество" required>
+				</div>
+				<div class="form-container">
+					<input name="age" id="age" type="number" placeholder="Введите Ваш возраст" required>
+				</div>
+				<div class="form-container">
+					<input name="tel" id="tel" type="tel" placeholder="Введите Ваш номер телефона"
+					pattern="[+380][0-9]{12}" value="+380976458931" required>
+				</div>
+				<div class="form-container">
+					<input name="knowledge" id="knowledge" type="text" placeholder="Ваше основное образование" required>
+				</div>
+				<div class="form-container">
+					<input name="dreamwork" id="dreamwork" type="text" placeholder="Ваша желаемая должность" required>
+				</div>
+				<button name="btn">Добавить информацию</button>
+			</form>
+		</div>
+		<img class="work" src="https://st2.depositphotos.com/1594308/6940/i/600/depositphotos_69408197-stock-photo-people-working-with-laptops.jpg" alt="work">
+		<img class="family" src="https://image.freepik.com/free-photo/young-smiling-couple-lying-bed-home-casual-outfit-looking-laptop-man-woman-spending-happy-time-together-relaxing_285396-3186.jpg" alt="family">
+		<img class="neon" src="https://avatanplus.ru/files/resources/original/5cd1b8e4b4fd316a933a3d85.png" alt="neon">
+	</div>
+	<ol id="list"></ol>
+	<button id="button_remove">Удалить всех пользователей</button>
+	<script>
+		const $form = document.forms.contacts;
+		const $list = document.getElementById("list");
+		const $button_remove = document.getElementById("button_remove");
+		const savedList = localStorage.getItem("list");
+
+		if (savedList) {
+			$list.innerHTML = savedList;
+		}
+
+		function createContactInDOM (contactName, contactSurname, contactPatronymic, contactAge, contactTel, contactKnowledge, contactDreamwork) {
+			const $li = document.createElement('li');
+			const $spanName = document.createElement('span');
+			const $spanSurname = document.createElement('span');
+			const $spanPatronymic = document.createElement('span');
+			const $spanAge = document.createElement('span');
+			const $spanTel = document.createElement('span');
+			const $spanKnowladge = document.createElement('span');
+			const $spanDreamwork = document.createElement('span');
+			$spanName.textContent = "Имя: " + contactName;
+			$spanSurname.textContent = "Фамилия: " + contactSurname;
+			$spanPatronymic.textContent = "Отчество: " + contactPatronymic;
+			$spanAge.textContent = "Возраст: " + contactAge;
+			$spanTel.textContent = "Телефон: " + contactTel;
+			$spanKnowladge.textContent = "Образование: " + contactKnowledge;
+			$spanDreamwork.textContent = "Желаемая должность: " +
+			contactDreamwork;
+			$li.append($spanName, $spanSurname, $spanPatronymic, $spanAge, $spanTel, $spanKnowladge, $spanDreamwork);
+			return $li
+		}
+
+		$form.addEventListener("submit", function (event) {
+			event.preventDefault();
+			const contactName = $form.name.value
+			const contactTel = $form.tel.value
+			const contactSurname = $form.surname.value
+			const contactPatronymic = $form.patronymic.value
+			const contactAge = $form.age.value
+			const contactKnowledge = $form.knowledge.value
+			const contactDreamwork = $form.dreamwork.value
+
+			const newUser = createContactInDOM(contactName, contactSurname, contactPatronymic, contactAge, contactTel, contactKnowledge, contactDreamwork);
+			console.log(newUser);
+			$list.append(newUser);
+			localStorage.setItem('list', $list.innerHTML);
+			$button_remove.addEventListener("click", function () {
+				localStorage.removeItem('list');
+				$list.textContent = "";
+			})
+		})
+
+	</script>
+</body>
+</html>
