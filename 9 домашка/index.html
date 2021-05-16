@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+	<title>Document</title>
+	<style>
+		.card {
+			border: 2px solid black;
+			box-shadow: 1px 1px 13px 2px black;
+			border-radius: 15px;
+			max-width: 400px;
+			font-family: 'Pangolin', cursive;
+			padding: 20px;
+			/*background-color: rgb(92, 225, 242);*/
+			font-size: 2em;
+		}
+		.card .name {
+			margin-top: 0;
+		}
+
+		.card p {
+			margin: 2px;
+		}
+
+		#card-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+			grid-gap: 20px;
+		}
+		.link-container {
+			display: flex;
+			justify-content: center;
+		}
+		.link-container a {
+			font-size: 2.5em;
+			text-decoration: none;
+			font-family: 'Pangolin', cursive;
+			margin-top: 10px;
+			color: rgb(157, 36, 201);
+			text-shadow: 2px 2px 2px black;
+		}
+		.link-container a:first-child {
+			margin-right: 40px;
+		}
+		.link-container a:hover {
+			color: rgb(237, 60, 240);
+			transition: 0.35s;
+		}
+	</style>
+</head>
+<body>
+	<div id="card-container"></div>
+	<div class="link-container">
+		<a href="#" id="prev">Previous</a>
+		<a href="#" id="next">Next</a>
+	</div>
+	<script>
+		const $prev = document.getElementById("prev");
+		const $next = document.getElementById("next");
+
+		const getInformation = url => {
+			const request = fetch(url, {
+				method: 'GET'
+			});
+			request
+				.then(res => res.json())
+				.then(res => {
+					console.log(res);
+					if (res.next) {
+						$next.hidden = false;
+						$next.href = res.next
+					} else {
+						$next.hidden = true;
+					}
+					if (res.previous) {
+						$prev.hidden = false;
+						$prev.href = res.previous;
+					} else {
+						$prev.hidden = true
+					}
+					const characters = res.results;
+					addCharacters(characters);
+				})
+
+		}
+		getInformation("https://swapi.dev/api/people/");
+
+		const addCharacters = (array) => {
+			array.forEach(characterObject => {
+				console.log(characterObject.gender);
+				let color;
+				if (characterObject.gender === "male") {
+					console.log("it is male")
+					color = "#00FFFF";
+				} else if (characterObject.gender === "female") {
+					console.log("it is female")
+					color = "#FF00FF";
+				} else if (characterObject.gender === "n/a") {
+					console.log("it is n/a")
+					color = "#FFD700";
+				} else if (characterObject.gender === "hermaphrodite") {
+					console.log("it is hermaphrodite")
+					color = "#7CFC00";
+				}
+
+				const $characterDiv = createCharacter(characterObject, color)
+			})
+		}
+
+
+		const $card_container = document.getElementById("card-container");
+
+		const createCharacter = (character, color) => {
+			console.log(character);
+			const $div = document.createElement('div');
+			$div.classList.add('card');
+			$div.style.backgroundColor = color;
+			const $heading = document.createElement('h2');
+			$heading.classList.add('name');
+			$heading.textContent = character.name;
+
+			$eye_color = document.createElement('p');
+			$eye_color.textContent = `Eye color: ${character.eye_color}`;
+
+			$height = document.createElement('p');
+			$height.textContent = `Height: ${character.height}`;
+
+			$birth_year = document.createElement('p');
+			$birth_year.textContent = `Birth year: ${character.birth_year}`;
+
+			$created = document.createElement('p');
+			$created.textContent = `Created: ${character.created}`;
+
+			$mass = document.createElement('p');
+			$mass.textContent = `Mass: ${character.mass}`;
+
+			$hair_color = document.createElement('p');
+			$hair_color.textContent = `Hair color: ${character.hair_color}`;
+
+			$skin_color = document.createElement('p');
+			$skin_color.textContent = `Skin color: ${character.skin_color}`;
+
+			$gender = document.createElement('p');
+			$gender.textContent = `Gender: ${character.gender}`;
+
+			$div.append($heading, $birth_year, $gender, $eye_color, $hair_color, $skin_color, $mass, $height, $created);
+			$card_container.append($div);
+
+		}
+
+		const getOtherCharacters = (event) => {
+			event.preventDefault();
+
+			$card_container.innerHTML = '';
+			getInformation(event.target.href);
+		}
+
+		$next.addEventListener('click', getOtherCharacters);
+
+		$prev.addEventListener('click', getOtherCharacters);
+	</script>
+</body>
+</html>
